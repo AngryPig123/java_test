@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: demo
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
+
