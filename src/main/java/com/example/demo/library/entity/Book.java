@@ -3,9 +3,9 @@ package com.example.demo.library.entity;
 import com.example.demo.library.vo.*;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.UUID;
-
 
 public abstract class Book {
 
@@ -32,12 +32,16 @@ public abstract class Book {
         if (this.rentalAvailability) {
             this.rentalCount++;
             this.rentalAvailability = false;
+        } else {
+            throw new IllegalStateException("Rental has already been released");
         }
     }
 
     public void returnBook() {
         if (!this.rentalAvailability) {
             this.rentalAvailability = true;
+        } else {
+            throw new IllegalStateException("Rental has already been returned");
         }
     }
 
@@ -80,7 +84,7 @@ public abstract class Book {
     }
 
     public BigDecimal getPrice() {
-        return price;
+        return price.setScale(0, RoundingMode.DOWN);
     }
 
     public int getPage() {

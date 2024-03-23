@@ -20,7 +20,6 @@ public class PaperBookTestSetup extends BookTestSetup {
         paperBookList.clear();
     }
 
-
     protected DamageLevel createDamageLevel() {
         return DamageLevel.getRandomGenreType();
     }

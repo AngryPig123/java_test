@@ -3,6 +3,7 @@ package com.example.demo.library.entity;
 import com.example.demo.library.vo.*;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,7 +25,7 @@ public class PaperBook extends Book {
 
     @Override
     public BigDecimal getPrice() {
-        return super.getPrice().multiply(new BigDecimal(this.damageLevel.value));
+        return super.getPrice().multiply(new BigDecimal(this.damageLevel.value)).setScale(0, RoundingMode.DOWN);
     }
 
     @Override
