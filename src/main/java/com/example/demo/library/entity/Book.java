@@ -29,12 +29,14 @@ public abstract class Book {
     }   //  책 정보 출력
 
     public void rentalBook() {
+        
         if (this.rentalAvailability) {
             this.rentalCount++;
             this.rentalAvailability = false;
         } else {
             throw new IllegalStateException("Rental has already been released");
         }
+
     }   //  책 렌탈 가능 여부 확인
 
     public void returnBook() {

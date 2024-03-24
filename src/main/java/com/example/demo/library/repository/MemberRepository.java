@@ -7,4 +7,6 @@ import com.example.demo.library.vo.MemberId;
 
 public interface MemberRepository {
     Member findMemberById(MemberId memberId);
+
+    Member updateStatus(Member member);
 }

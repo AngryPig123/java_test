@@ -11,7 +11,11 @@ public class Member {
     private final String email;
     private final DateInfo birth;
     private final String description;
-    private final MemberGrade memberGrade;
+    private MemberGrade memberGrade;
+
+    public void updateMemberGrade(MemberGrade memberGrade) {
+        this.memberGrade = memberGrade;
+    }
 
     public Member(
             MemberId memberId, String name, String email, DateInfo birth, String description, MemberGrade memberGrade
@@ -47,5 +51,5 @@ public class Member {
     public MemberGrade getMemberGrade() {
         return memberGrade;
     }
-    
+
 }

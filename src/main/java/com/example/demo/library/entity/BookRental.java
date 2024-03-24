@@ -4,6 +4,7 @@ import com.example.demo.library.vo.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 
 import static com.example.demo.library.vo.RentalStatus.STEP1;
@@ -32,10 +33,15 @@ public class BookRental {
 
     public void startRental() {
         validate();
-        book.rentalBook();
+        rentalValidate();
         this.dateInfo = new DateInfo(LocalDate.now());
         this.rentalStatus = STEP1;
         this.price = book.getPrice().multiply(new BigDecimal(member.getMemberGrade().value));
+    }
+
+    private void rentalValidate() {
+        book.rentalBook();
+        if (member.getMemberGrade() == MemberGrade.BLACK) throw new IllegalStateException("Black 회원은 대여할 수 없습니다.");
     }
 
     public void bookReturn() {
@@ -51,4 +57,27 @@ public class BookRental {
         this.member = member;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public DateInfo getDateInfo() {
+        return dateInfo;
+    }
+
+    public RentalStatus getRentalStatus() {
+        return rentalStatus;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
 }
