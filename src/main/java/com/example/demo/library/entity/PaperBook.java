@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class PaperBook extends Book {
 
-    private final DamageLevel damageLevel;
+    private DamageLevel damageLevel;
 
     public PaperBook(
             BookId id, String title, List<Author> authors, DateInfo dateInfo, Genre genre, UUID isbn, BigDecimal price,
@@ -20,17 +20,16 @@ public class PaperBook extends Book {
     }
 
     public DamageLevel getDamageLevel() {
-        return damageLevel;
-    }
+        return this.damageLevel;
+    }   //  손상 정도를 가져온다.
+
+    public void changeDamageLevel(DamageLevel damageLevel) {
+        this.damageLevel = damageLevel;
+    }   //  손상 정도를 변경한다.
 
     @Override
     public BigDecimal getPrice() {
         return super.getPrice().multiply(new BigDecimal(this.damageLevel.value)).setScale(0, RoundingMode.DOWN);
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+    }   //  가격을 가져온다.
 
 }

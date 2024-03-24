@@ -11,7 +11,11 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
-public abstract class BookInfo {
+public abstract class DetailInfoData {
+
+    /***
+     * Book data
+     */
 
     protected String[] titles = {"Java Programming for Beginners", "Clean Code: A Handbook of Agile Software Craftsmanship", "Design Patterns: Elements of Reusable Object-Oriented Software", "Effective Java", "Head First Java", "Introduction to Algorithms", "The Pragmatic Programmer: Your Journey to Mastery", "Cracking the Coding Interview", "Refactoring: Improving the Design of Existing Code", "Code Complete: A Practical Handbook of Software Construction", "JavaScript: The Good Parts", "Eloquent JavaScript: A Modern Introduction to Programming", "Learning Python", "Python Crash Course", "Automate the Boring Stuff with Python", "Learning React: A Hands-On Guide to Building Web Applications Using React and Redux", "Node.js Design Patterns", "Learning SQL", "SQL for Dummies", "Data Structures and Algorithms in Python", "Algorithms Unlocked", "Computer Networking: A Top-Down Approach", "Operating System Concepts", "Clean Architecture: A Craftsman's Guide to Software Structure and Design", "Domain-Driven Design: Tackling Complexity in the Heart of Software"};
 

@@ -26,7 +26,7 @@ public abstract class Book {
                 "title : %s, Genre : %s, Authors : %s, price : %s, rentalCount : %s, rentalAvailability : %s",
                 this.title, this.genre, this.authors, this.price, this.rentalCount, this.rentalAvailability
         );
-    }
+    }   //  책 정보 출력
 
     public void rentalBook() {
         if (this.rentalAvailability) {
@@ -35,7 +35,7 @@ public abstract class Book {
         } else {
             throw new IllegalStateException("Rental has already been released");
         }
-    }
+    }   //  책 렌탈 가능 여부 확인
 
     public void returnBook() {
         if (!this.rentalAvailability) {
@@ -43,7 +43,7 @@ public abstract class Book {
         } else {
             throw new IllegalStateException("Rental has already been returned");
         }
-    }
+    }   //  책 반납 가능 여부 확인
 
     public Book(BookId id, String title, List<Author> authors, DateInfo dateInfo, Genre genre, UUID isbn, BigDecimal price, int page, Tag tag, short rentalCount, boolean rentalAvailability) {
         this.id = id;

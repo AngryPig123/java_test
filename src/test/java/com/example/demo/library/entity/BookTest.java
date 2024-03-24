@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-class PaperBookTest extends PaperBookTestSetup {
+class BookTest extends BookTestSetup {
 
     @Nested
     class BookRentalReturn {
