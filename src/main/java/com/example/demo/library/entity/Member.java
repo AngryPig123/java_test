@@ -17,6 +17,7 @@ public class Member {
         this.memberGrade = memberGrade;
     }
 
+
     public Member(
             MemberId memberId, String name, String email, DateInfo birth, String description, MemberGrade memberGrade
     ) {
